@@ -8,7 +8,7 @@
 
 **リポジトリ**: https://github.com/inadati/pov-harness
 **種別**: Claude Code プラグイン
-**目的**: PoV（Point of View）駆動の開発ハーネス。要件定義 → 実装プラン → 審査委員会編成 → 実装 → 多観点評価 → 修正ループで品質を担保する。
+**目的**: PoV（Point of View）駆動の開発ハーネス。要件定義 → 実装プラン → 審査団編成 → 実装 → 多観点評価 → 修正ループで品質を担保する。
 
 ---
 
@@ -26,7 +26,7 @@ pov-harness/
 │           └── pov-harness/
 │               ├── SKILL.md       ← メインスキル（7フェーズの実行手順書）
 │               └── references/
-│                   └── default-committee.yml  ← 審査委員会の汎用テンプレート
+│                   └── default-committee.yml  ← 審査団の汎用テンプレート
 ├── README.md
 └── CLAUDE.md（このファイル）
 ```
@@ -39,7 +39,7 @@ pov-harness/
 |--------|---------|------|
 | `wantree` | `/pov-harness:wantree` | ヒアリング形式で要件定義YAML（wantree.yml）を作成・管理 |
 | `plan-review` | AUTO-TRIGGER のみ | `ExitPlanMode` 後に自動起動。プランを最小決定事項に分解して1件ずつ確認 |
-| `pov-harness` | `/pov-harness:pov-harness` | メインスキル。7フェーズで要件定義〜審査委員会ループを実行 |
+| `pov-harness` | `/pov-harness:pov-harness` | メインスキル。7フェーズで要件定義〜審査団ループを実行 |
 
 ---
 
@@ -50,7 +50,7 @@ pov-harness/
 フェーズ1: wantree インライン実行（フェーズ0でAを選択した場合のみ）
 フェーズ2: 実装プランニング（EnterPlanMode）
 フェーズ3: plan-review AUTO-TRIGGER（1回目）
-フェーズ4: 審査委員会プランニング（EnterPlanMode）
+フェーズ4: 審査団プランニング（EnterPlanMode）
 フェーズ5: plan-review AUTO-TRIGGER（2回目）
 フェーズ6: .pov-harness/committee.yml に書き出し
 フェーズ7: 実装ループ（実装→並列PoV評価→委員長集約→合否判定、上限5回）
@@ -65,9 +65,9 @@ pov-harness/
 | 回 | 対象 | 目的 |
 |----|------|------|
 | 1回目 | 実装プラン | 技術的方針・設計の確認 |
-| 2回目 | 審査委員会プラン | PoV構成・合格ラインの確認 |
+| 2回目 | 審査団プラン | PoV構成・合格ラインの確認 |
 
-実装プランが確定した後でないと審査委員会の構成が決められないため、必ず直列で実行する。
+実装プランが確定した後でないと審査団の構成が決められないため、必ず直列で実行する。
 
 ### passing_score を委員ごとに個別設定する理由
 
@@ -93,7 +93,7 @@ pov-harness/
 │   └── 0/
 │       └── wantree.yml    ← 要件定義（フェーズ1）
 └── .pov-harness/
-    └── committee.yml      ← 審査委員会設定（フェーズ6）
+    └── committee.yml      ← 審査団設定（フェーズ6）
 ```
 
 ---
@@ -122,7 +122,7 @@ pov-harness/
   1. フェーズ0の選択肢（A/B/C）が表示される
   2. Aを選んでwantreeがインライン起動する
   3. 実装プランが作成されplan-reviewがAUTO-TRIGGERされる
-  4. 審査委員会プランが作成されplan-reviewが2回目に起動する
+  4. 審査団プランが作成されplan-reviewが2回目に起動する
   5. `.pov-harness/committee.yml` が生成される
   6. 並列Agentが起動し採点・委員長集約が行われる
 
