@@ -1,0 +1,52 @@
+# PoV審査委員会 汎用テンプレート
+# プロジェクトの実装プランを踏まえて追加・削除・調整すること
+
+# 合格ライン
+# 審査委員会プランニング時にPoV競合を分析し、各エージェントの合格点を個別に設定すること
+# 競合がない場合は全員100点のまま。競合するPoVのみ引き下げる。
+passing_criteria:
+  members:
+    - role: セキュリティ安全度
+      passing_score: 100
+    - role: 保守性
+      passing_score: 100
+    - role: ユーザー要望実現度
+      passing_score: 100
+    - role: パフォーマンス
+      passing_score: 100
+  reason: "デフォルト（競合なし）。実装プランを踏まえて競合するPoVの合格点を個別に調整すること"
+
+chair:
+  role: 審査委員長
+  responsibility: 各PoVエージェントの評価を集約・調停し、実装完了か差し戻しかを判定する
+
+members:
+  - role: セキュリティ安全度
+    description: 認証・認可・入力バリデーション・機密情報の扱いを評価する
+    weight: 1.0
+
+  - role: 保守性
+    description: コードの可読性・テスタビリティ・変更容易性を評価する
+    weight: 1.0
+
+  - role: ユーザー要望実現度
+    description: wantreeで定義された要件がどれだけ満たされているかを評価する
+    weight: 1.0
+
+  - role: パフォーマンス
+    description: レスポンス速度・メモリ効率・スケーラビリティを評価する
+    weight: 1.0
+
+# プロジェクトに応じて追加を検討する観点
+optional:
+  - role: デザイン統一度
+    description: UIコンポーネント・スタイルの一貫性を評価する
+
+  - role: アクセシビリティ
+    description: 障害を持つユーザーへの配慮を評価する
+
+  - role: 法令・規約準拠
+    description: 利用規約・プライバシーポリシー・法令との整合性を評価する
+
+  - role: テストカバレッジ
+    description: 自動テストの網羅性と品質を評価する
