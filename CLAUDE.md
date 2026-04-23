@@ -53,7 +53,7 @@ pov-harness/
 フェーズ4: 審査団プランニング（EnterPlanMode）
 フェーズ5: plan-review AUTO-TRIGGER（2回目）
 フェーズ6: .pov-harness/committee.yml に書き出し
-フェーズ7: 実装ループ（実装→並列PoV評価→委員長集約→合否判定、上限5回）
+フェーズ7: 実装ループ（実装→並列PoV評価→審査団長集約→合否判定、上限5回）
 ```
 
 ---
@@ -124,7 +124,7 @@ pov-harness/
   3. 実装プランが作成されplan-reviewがAUTO-TRIGGERされる
   4. 審査団プランが作成されplan-reviewが2回目に起動する
   5. `.pov-harness/committee.yml` が生成される
-  6. 並列Agentが起動し採点・委員長集約が行われる
+  6. 並列Agentが起動し採点・審査団長集約が行われる
 
 ---
 
