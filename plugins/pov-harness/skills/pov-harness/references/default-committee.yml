@@ -1,6 +1,13 @@
 # PoV審査委員会 汎用テンプレート
 # プロジェクトの実装プランを踏まえて追加・削除・調整すること
 
+# 合格ライン（審査委員会プランニング時にPoV競合リスクを踏まえて調整すること）
+passing_criteria:
+  total_score_rate: 100  # 総合満点に対する合格率（%）。競合リスクに応じて80〜100で設定
+  min_individual_score: 100  # 各審査員の最低スコア。競合リスクに応じて60〜100で設定
+  conflict_risk: low  # low / medium / high
+  reason: "デフォルト。プロジェクトの実装プランを踏まえて調整すること"
+
 chair:
   role: 審査委員長
   responsibility: 各PoVエージェントの評価を集約・調停し、実装完了か差し戻しかを判定する
