@@ -1,0 +1,24 @@
+{
+  "name": "pov-harness",
+  "owner": {
+    "name": "inadati"
+  },
+  "metadata": {
+    "description": "PoV（観点）駆動の開発ハーネス。要件定義・プランレビュー・多観点審査を統合した開発支援プラグイン。PoV = Point of View（観点）。"
+  },
+  "plugins": [
+    {
+      "name": "pov-harness",
+      "source": "./plugins/pov-harness",
+      "description": "PoV（観点）駆動の開発ハーネス。wantree（要件定義）・plan-review（プランレビュー）・pov-harness（多観点審査委員会）を統合。PoV = Point of View（観点）。",
+      "version": "0.1.0",
+      "author": {
+        "name": "inadati"
+      },
+      "repository": "https://github.com/inadati/pov-harness",
+      "license": "MIT",
+      "category": "productivity",
+      "tags": ["pov", "wantree", "plan-review", "development", "quality"]
+    }
+  ]
+}
