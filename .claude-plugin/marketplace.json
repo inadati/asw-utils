@@ -1,24 +1,24 @@
 {
-  "name": "pov-harness",
+  "name": "i-harness",
   "owner": {
     "name": "inadati"
   },
   "metadata": {
-    "description": "PoV（観点）駆動の開発ハーネス。要件定義・プランレビュー・多観点審査を統合した開発支援プラグイン。PoV = Point of View（観点）。"
+    "description": "指標（indicator）駆動の開発ハーネス。要件定義・プランレビュー・多指標審査を統合した開発支援プラグイン。i = indicator（指標）。"
   },
   "plugins": [
     {
-      "name": "pov-harness",
-      "source": "./plugins/pov-harness",
-      "description": "PoV（観点）駆動の開発ハーネス。wantree（要件定義）・plan-review（プランレビュー）・pov-harness（多観点審査委員会）を統合。PoV = Point of View（観点）。",
-      "version": "0.2.0",
+      "name": "i-harness",
+      "source": "./plugins/i-harness",
+      "description": "指標（indicator）駆動の開発ハーネス。wantree（要件定義）・plan-review（プランレビュー）・i-harness（多指標審査団）を統合。i = indicator（指標）。",
+      "version": "0.1.0",
       "author": {
         "name": "inadati"
       },
-      "repository": "https://github.com/inadati/pov-harness",
+      "repository": "https://github.com/inadati/i-harness",
       "license": "MIT",
       "category": "productivity",
-      "tags": ["pov", "wantree", "plan-review", "development", "quality"]
+      "tags": ["i-harness", "indicator", "wantree", "plan-review", "development", "quality"]
     }
   ]
 }
