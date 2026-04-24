@@ -5,7 +5,7 @@ description: |
   "PoVハーネスを開始して", "観点駆動で開発して",
   or wants to run implementation with multi-perspective review committee evaluation.
   PoV = Point of View（観点）。
-version: 0.1.0
+version: 0.1.1
 tools: Read, Write, Edit, Bash, Agent, AskUserQuestion, EnterPlanMode, ExitPlanMode, Glob
 ---
 
