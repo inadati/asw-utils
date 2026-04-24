@@ -5,7 +5,7 @@ description: |
   "指標ハーネスを開始して", "指標駆動で開発して",
   or wants to run implementation with multi-indicator review committee evaluation.
   i = indicator（指標）。
-version: 0.3.0
+version: 0.1.0
 tools: Read, Write, Edit, Bash, Agent, AskUserQuestion, EnterPlanMode, ExitPlanMode, Glob
 ---
 

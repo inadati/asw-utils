@@ -11,7 +11,7 @@
       "name": "i-harness",
       "source": "./plugins/i-harness",
       "description": "指標（indicator）駆動の開発ハーネス。wantree（要件定義）・plan-review（プランレビュー）・i-harness（多指標審査団）を統合。i = indicator（指標）。",
-      "version": "0.3.0",
+      "version": "0.1.0",
       "author": {
         "name": "inadati"
       },
