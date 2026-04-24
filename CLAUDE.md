@@ -24,9 +24,7 @@ pov-harness/
 │           ├── plan-review/
 │           │   └── SKILL.md       ← ExitPlanMode 後に AUTO-TRIGGER されるレビュースキル
 │           └── pov-harness/
-│               ├── SKILL.md       ← メインスキル（7フェーズの実行手順書）
-│               └── references/
-│                   └── default-committee.yml  ← 審査団の汎用テンプレート
+│               └── SKILL.md       ← メインスキル（7フェーズの実行手順書）
 ├── README.md
 └── CLAUDE.md（このファイル）
 ```
@@ -110,7 +108,6 @@ pov-harness/
 
 - pov-harness プラグインの初期設計
 - wantree・plan-review・pov-harness の3スキル構成を確立
-- `default-committee.yml` テンプレートを作成
 - plan-review の AUTO-TRIGGER 設計を確立
 
 ---
@@ -137,5 +134,4 @@ pov-harness/
 - **plan-review は AUTO-TRIGGER 専用**。ユーザーが手動で呼び出すスキルではない
 - **wantree.yml の置き場所**: ターゲットプロジェクトルートの `.wantree/<番号>/wantree.yml`
 - **committee.yml の置き場所**: ターゲットプロジェクトルートの `.pov-harness/committee.yml`
-- **default-committee.yml**: このリポジトリの `plugins/pov-harness/skills/pov-harness/references/default-committee.yml`（変更しない・参照のみ）
 - **ループ上限は5回**（SKILL.md 本文が優先。プランの「確認事項」に3回と書かれていたが5回に変更済み）

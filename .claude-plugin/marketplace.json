@@ -11,7 +11,7 @@
       "name": "pov-harness",
       "source": "./plugins/pov-harness",
       "description": "PoV（観点）駆動の開発ハーネス。wantree（要件定義）・plan-review（プランレビュー）・pov-harness（多観点審査委員会）を統合。PoV = Point of View（観点）。",
-      "version": "0.1.2",
+      "version": "0.1.3",
       "author": {
         "name": "inadati"
       },
