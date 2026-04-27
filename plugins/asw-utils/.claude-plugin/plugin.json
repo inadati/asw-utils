@@ -1,0 +1,5 @@
+{
+  "name": "asw-utils",
+  "description": "Claude Code ユーティリティ集。wantree（要件定義）・plan-review（プランレビュー）を提供。",
+  "version": "0.4.0"
+}
