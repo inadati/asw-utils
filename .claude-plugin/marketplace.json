@@ -1,24 +1,29 @@
 {
-  "name": "i-harness",
+  "name": "asw-utils",
   "owner": {
     "name": "inadati"
   },
   "metadata": {
-    "description": "指標（indicator）駆動の開発ハーネス。要件定義・プランレビュー・多指標審査を統合した開発支援プラグイン。i = indicator（指標）。"
+    "description": "Claude Code ユーティリティ集。wantree（要件定義）・plan-review（プランレビュー）を提供。"
   },
   "plugins": [
     {
-      "name": "i-harness",
-      "source": "./plugins/i-harness",
-      "description": "指標（indicator）駆動の開発ハーネス。wantree（要件定義）・plan-review（プランレビュー）・i-harness（多指標審査団）を統合。i = indicator（指標）。",
-      "version": "0.1.0",
+      "name": "asw-utils",
+      "source": "./plugins/asw-utils",
+      "description": "wantree（要件定義）・plan-review（プランレビュー）を提供する Claude Code ユーティリティ。",
+      "version": "0.4.0",
       "author": {
         "name": "inadati"
       },
-      "repository": "https://github.com/inadati/i-harness",
+      "repository": "https://github.com/inadati/asw-utils",
       "license": "MIT",
       "category": "productivity",
-      "tags": ["i-harness", "indicator", "wantree", "plan-review", "development", "quality"]
+      "tags": [
+        "asw-utils",
+        "wantree",
+        "plan-review",
+        "development"
+      ]
     }
   ]
 }
