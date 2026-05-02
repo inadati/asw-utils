@@ -1,5 +1,5 @@
 {
-  "name": "asw-utils",
+  "name": "asw-plant",
   "owner": {
     "name": "inadati"
   },
@@ -8,18 +8,18 @@
   },
   "plugins": [
     {
-      "name": "asw-utils",
-      "source": "./plugins/asw-utils",
+      "name": "asw-plant",
+      "source": "./plugins/asw-plant",
       "description": "wantree（要件定義）・plan-review（プランレビュー）を提供する Claude Code ユーティリティ。",
       "version": "0.4.0",
       "author": {
         "name": "inadati"
       },
-      "repository": "https://github.com/inadati/asw-utils",
+      "repository": "https://github.com/inadati/asw-plant",
       "license": "MIT",
       "category": "productivity",
       "tags": [
-        "asw-utils",
+        "asw-plant",
         "wantree",
         "plan-review",
         "development"
