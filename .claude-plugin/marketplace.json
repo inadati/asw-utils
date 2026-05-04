@@ -4,14 +4,14 @@
     "name": "inadati"
   },
   "metadata": {
-    "description": "Claude Code ユーティリティ集。wantree（要件定義）・plan-review（プランレビュー）を提供。"
+    "description": "Claude Code ユーティリティ集。wantree（要件定義）・plan-review（プランレビュー）・easy-evaluation（提案批評）を提供。"
   },
   "plugins": [
     {
       "name": "asw-utils",
       "source": "./plugins/asw-utils",
-      "description": "wantree（要件定義）・plan-review（プランレビュー）を提供する Claude Code ユーティリティ。",
-      "version": "0.4.0",
+      "description": "wantree（要件定義）・plan-review（プランレビュー）・easy-evaluation（提案批評）を提供する Claude Code ユーティリティ。",
+      "version": "0.5.0",
       "author": {
         "name": "inadati"
       },
@@ -22,6 +22,7 @@
         "asw-utils",
         "wantree",
         "plan-review",
+        "easy-evaluation",
         "development"
       ]
     }
