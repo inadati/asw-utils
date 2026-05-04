@@ -1,5 +1,5 @@
 {
-  "name": "asw-utils",
+  "name": "asw-marketplace",
   "owner": {
     "name": "inadati"
   },
@@ -15,7 +15,7 @@
       "author": {
         "name": "inadati"
       },
-      "repository": "https://github.com/inadati/asw-utils",
+      "repository": "https://github.com/inadati/asw-marketplace",
       "license": "MIT",
       "category": "productivity",
       "tags": [
