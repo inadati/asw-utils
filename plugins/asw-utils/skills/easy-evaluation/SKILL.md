@@ -6,7 +6,7 @@ description: |
   "サブエージェントに評価させて", "easy-evaluationをはじめて",
   "評価者に評価してもらって", "評価者に評価してほしい", "評価者に見てもらって",
   or wants to critically evaluate a proposal that was made in the current conversation.
-version: 0.1.0
+version: 0.1.1
 tools: Agent, AskUserQuestion
 ---
 
