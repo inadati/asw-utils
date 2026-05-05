@@ -4,6 +4,7 @@ description: |
   This skill should be used when the user asks to "easy-evaluationを起動して",
   "提案を評価して", "この提案を厳しく評価して", "評価してほしい",
   "サブエージェントに評価させて", "easy-evaluationをはじめて",
+  "評価者に評価してもらって", "評価者に評価してほしい", "評価者に見てもらって",
   or wants to critically evaluate a proposal that was made in the current conversation.
 version: 0.1.0
 tools: Agent, AskUserQuestion
