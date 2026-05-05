@@ -11,7 +11,7 @@
       "name": "asw-utils",
       "source": "./plugins/asw-utils",
       "description": "wantree（要件定義）・plan-review（プランレビュー）・easy-evaluation（提案批評）を提供する Claude Code ユーティリティ。",
-      "version": "0.5.0",
+      "version": "0.5.1",
       "author": {
         "name": "inadati"
       },
