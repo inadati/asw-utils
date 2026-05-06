@@ -25,6 +25,26 @@
         "easy-evaluation",
         "development"
       ]
+    },
+    {
+      "name": "crucible-harness",
+      "source": "./plugins/crucible-harness",
+      "description": "固定チェックリスト × 悪魔の代理人 × Self-Reflection × Memory による汎用品質向上ハーネス。",
+      "version": "0.1.0",
+      "author": {
+        "name": "inadati"
+      },
+      "repository": "https://github.com/inadati/asw-marketplace",
+      "license": "MIT",
+      "category": "productivity",
+      "tags": [
+        "crucible-harness",
+        "harness",
+        "quality",
+        "evaluation",
+        "reflexion",
+        "development"
+      ]
     }
   ]
 }
