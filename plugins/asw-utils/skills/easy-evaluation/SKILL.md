@@ -6,8 +6,8 @@ description: |
   "サブエージェントに評価させて", "easy-evaluationをはじめて",
   "評価者に評価してもらって", "評価者に評価してほしい", "評価者に見てもらって",
   or wants to critically evaluate a proposal that was made in the current conversation.
-version: 0.1.1
-tools: Agent, AskUserQuestion
+version: 0.2.0
+tools: Agent, AskUserQuestion, mcp__proxy-ai__openai_chat, mcp__proxy-ai__gemini_chat
 ---
 
 # easy-evaluation スキル
@@ -30,10 +30,11 @@ tools: Agent, AskUserQuestion
 
 ```
 評価者数はデフォルトの3名でよろしいですか？（変更する場合は人数を入力してください）
+デフォルト構成: 評価者A=Claude / 評価者B=GPT / 評価者C=Gemini
 ```
 
 - `y` / `はい` / `ok` / 何も入力せず Enter → 3名で進む
-- 数字が入力された場合 → その数を評価者数とする
+- 数字が入力された場合 → その数を評価者数とする（4名以上はClaudeで補完）
 
 ### フェーズ2: 評価対象の特定
 
@@ -45,14 +46,20 @@ tools: Agent, AskUserQuestion
 評価したい提案の内容を教えてください。
 ```
 
-### フェーズ3: 評価者サブエージェントの並列起動
+### フェーズ3: 評価者の並列実行
 
-`Agent` ツールを使い、**評価者数と同じ数のサブエージェントを並列で起動**する。
+**モデル割り当て**:
+- 評価者A → `Agent` ツール（Claude）
+- 評価者B → `mcp__proxy-ai__openai_chat`（GPT）
+- 評価者C → `mcp__proxy-ai__gemini_chat`（Gemini）
+- 評価者D以降 → `Agent` ツール（Claude）で補完
 
-各サブエージェントには以下のプロンプトを渡す（EVALUATOR_NUMBER と PROPOSAL を置換すること）:
+**全評価者を同時並列で呼び出す**（順番待ちしない）。
+
+Claude（Agent）には以下のプロンプトを渡す（EVALUATOR_LABEL と PROPOSAL を置換）:
 
 ```
-あなたは評価者 #EVALUATOR_NUMBER です。
+あなたは評価者 EVALUATOR_LABEL です。
 以下の提案を厳しく批評してください。
 
 【評価対象の提案】
@@ -67,7 +74,7 @@ PROPOSAL
 
 必ず以下の構成で回答してください:
 
-### 評価者 #EVALUATOR_NUMBER の評価
+### 評価者 EVALUATOR_LABEL の評価
 
 #### 主な問題点（根拠付き）
 - [問題点1]: [なぜ問題なのか、根拠・データ・論理的理由]
@@ -82,6 +89,12 @@ PROPOSAL
 
 ---
 評価を終了します。
+```
+
+GPT（openai_chat）・Gemini（gemini_chat）には上記と同じ内容を `messages` パラメータとして渡す:
+
+```json
+[{"role": "user", "content": "<上記プロンプトと同じ内容>"}]
 ```
 
 ### フェーズ4: 評価結果の集約・表示
@@ -108,7 +121,8 @@ easy-evaluation 結果（評価者 N名）
 
 ## 注意事項
 
-- **サブエージェントは並列起動**: 全評価者を `Agent` ツールで同時に呼び出す（順番待ちしない）
-- **評価は忖度しない**: サブエージェントへのプロンプトを薄めたり修正したりしない
+- **全評価者は並列実行**: Claude=Agent、GPT=openai_chat、Gemini=gemini_chat を同時呼び出し（順番待ちしない）
+- **評価は忖度しない**: プロンプトを薄めたり修正したりしない
 - **評価対象が複数ある場合**: 直近の提案を優先する。複数候補がある場合はユーザーに選ばせる
-- **使用ツール**: `Agent`、`AskUserQuestion` のみ
+- **使用ツール**: `Agent`、`AskUserQuestion`、`mcp__proxy-ai__openai_chat`、`mcp__proxy-ai__gemini_chat`
+- **モデルの多様性が目的**: 同じClaudeを複数起動するより、異なるモデルで評価する方が盲点を補い合える
